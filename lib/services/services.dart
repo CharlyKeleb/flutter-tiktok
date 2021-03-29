@@ -13,5 +13,4 @@ abstract class Service {
     String fileUrl = await storageReference.getDownloadURL();
     return fileUrl;
   } 
-
 }

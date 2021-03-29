@@ -35,7 +35,9 @@ dependencies:
   path_provider: ^1.6.24
   video_player: ^1.0.1
   intl: ^0.16.1
-  flutter_video_compress: ^0.3.7
+  # flutter_video_compress: ^0.3.7
+  # video_thumbnail: ^0.2.5
+  video_compress: ^2.1.1 
   timeago: ^2.0.28
   image: ^2.1.19
   esys_flutter_share: ^1.0.2

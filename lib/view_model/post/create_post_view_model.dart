@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tiktok/models/post.dart';
 import 'package:flutter_tiktok/services/post_service.dart';
 import 'package:flutter_tiktok/services/user_service.dart';
-import 'package:flutter_tiktok/view/screens/create_post.dart';
-import 'package:flutter_video_compress/flutter_video_compress.dart';
+// import 'package:flutter_tiktok/view/screens/create_post.dart';
+// import 'package:flutter_video_compress/flutter_video_compress.dart';
 import 'package:image_picker/image_picker.dart';
+// import 'package:video_thumbnail/video_thumbnail.dart';
+import 'package:video_compress/video_compress.dart';
 
 class PostsViewModel extends ChangeNotifier {
   BuildContext context;
@@ -15,7 +17,8 @@ class PostsViewModel extends ChangeNotifier {
   UserService userService = UserService();
   PostService postService = PostService();
 
-  FlutterVideoCompress flutterVideoCompress = FlutterVideoCompress();
+  // FlutterVideoCompress flutterVideoCompress = FlutterVideoCompress();
+
   //Keys
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -90,8 +93,16 @@ class PostsViewModel extends ChangeNotifier {
         source: camera ? ImageSource.camera : ImageSource.gallery,
       );
       mediaUrl = File(pickedFile.path);
-      previewImage =
-          await flutterVideoCompress.getThumbnailWithFile(pickedFile.path);
+      // previewImage =
+      //     await flutterVideoCompress.getThumbnailWithFile(pickedFile.path);
+      // previewImage = await VideoThumbnail.thumbnailFile(
+      //     video: pickedFile.path,
+      //     imageFormat: ImageFormat.JPEG,
+      //     maxWidth: 128,
+      //     quality: 25);
+      previewImage = await VideoCompress.getFileThumbnail(
+        pickedFile.path,
+      );
       loading = false;
 
       notifyListeners();
