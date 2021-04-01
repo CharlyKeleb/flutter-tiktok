@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:esys_flutter_share/esys_flutter_share.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tiktok/models/post.dart';
 import 'package:flutter_tiktok/models/user.dart';
@@ -39,10 +38,10 @@ class PostService extends Service {
     ref.set({
       "id": ref.id,
       "postId": ref.id,
-      "username": user.username,
+      "username": user.username ?? "",
       "ownerId": firebaseAuth.currentUser.uid,
       "mediaUrl": link,
-      "musicName": musicName,
+      "musicName": musicName?? "",
       "description": description ?? "",
       "previewImage": preview,
       "timestamp": Timestamp.now(),
@@ -56,8 +55,8 @@ class PostService extends Service {
     DocumentSnapshot doc = await usersRef.doc(currentUserId()).get();
     user = UserModel.fromJson(doc.data());
     commentRef.doc(video.postId).collection("comments").add({
-      "username": user.username,
-      "comment": comment,
+      "username": user.username ?? "",
+      "comment": comment ?? "",
       "timestamp": timestamp,
       "userDp": user.photoUrl,
       "userId": user.id,

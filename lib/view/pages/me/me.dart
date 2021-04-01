@@ -51,7 +51,7 @@ class _MeState extends State<Me> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        // leading: Icon(Icons.arrow_back),
         title: StreamBuilder(
           stream: usersRef.doc(widget.profileId).snapshots(),
           builder: (context, snapshot) {
@@ -104,7 +104,6 @@ class _MeState extends State<Me> {
                               if (snapshot.hasData) {
                                 QuerySnapshot snap = snapshot.data;
                                 List<DocumentSnapshot> docs = snap.docs;
-
                                 return Text(
                                   docs?.length.toString() ?? 0.toString(),
                                   style: TextStyle(fontWeight: FontWeight.w900),

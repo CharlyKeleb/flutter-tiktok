@@ -39,8 +39,8 @@ class _CreatePostState extends State<CreatePost> {
         key: viewModel.scaffoldKey,
         appBar: AppBar(
           leading: InkWell(
-            onTap: () {
-              viewModel.resetPost();
+            onTap: () async{
+             await viewModel.resetPost();
               Navigator.pop(context);
             },
             child: Icon(Icons.keyboard_backspace),
@@ -49,9 +49,9 @@ class _CreatePostState extends State<CreatePost> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: InkWell(
-                onTap: () {
-                  viewModel.uploadPosts();
-                  viewModel.resetPost();
+                onTap: () async{
+                 await viewModel.uploadPosts();
+                  await viewModel.resetPost();
                   Navigator.pop(context);
                   print('Uploaded successfully!!');
                 },

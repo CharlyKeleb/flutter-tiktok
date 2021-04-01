@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  video?.description,
+                                  video?.description ?? "flutter tiktok",
                                   style: TextStyle(
                                       fontSize: 16.5,
                                       fontWeight: FontWeight.w700),
@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                                   children: [
                                     Icon(Feather.music, size: 15.0),
                                     Text(
-                                      video?.musicName,
+                                      video?.musicName ?? "-",
                                       style: TextStyle(
                                           fontSize: 14.5,
                                           fontWeight: FontWeight.w500),
