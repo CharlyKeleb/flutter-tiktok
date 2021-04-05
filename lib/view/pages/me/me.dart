@@ -97,7 +97,7 @@ class _MeState extends State<Me> {
                           StreamBuilder(
                             stream: followingRef
                                 .doc(widget.profileId)
-                                .collection('followings')
+                                .collection('userFollowing')
                                 .snapshots(),
                             builder: (context,
                                 AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -130,7 +130,7 @@ class _MeState extends State<Me> {
                           StreamBuilder(
                             stream: followerRef
                                 .doc(widget.profileId)
-                                .collection('followers')
+                                .collection('userFollowers')
                                 .snapshots(),
                             builder: (context,
                                 AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -163,7 +163,7 @@ class _MeState extends State<Me> {
                         children: [
                           StreamBuilder(
                             stream: likeRef
-                                .where('usesrId', isEqualTo: currentUserId())
+                                .where('userId', isEqualTo: currentUserId())
                                 .snapshots(),
                             builder: (context,
                                 AsyncSnapshot<QuerySnapshot> snapshot) {
