@@ -73,7 +73,7 @@ Double check install instructions for both
 - You can also use my firebase if you wish
 
 # What's Next?
- - []Add realtime message(liking image)
+ - []Add realtime message.
  
 
 ## 🤓 Author(s)
