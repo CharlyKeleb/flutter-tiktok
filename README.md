@@ -23,10 +23,10 @@ Star⭐ the repo if you like what you see😉.
 
 ## Screenshots
 <p>
-<img src="ss/t3.jpg" width="400"/> <img src="ss/t1.jpg" width="400"/>
-<img src="ss/t4.jpg" width="400"> <img src="ss/t2.jpg" width="400">
-<img src="ss/t7.jpg" width="400"> <img src="ss/t6.jpg" width="400">
-<img src="ss/t5.jpg"
+<img src="ss/t3.png" width="400"/> <img src="ss/t1.png" width="400"/>
+<img src="ss/t4.png" width="400"> <img src="ss/t2.png" width="400">
+<img src="ss/t7.png" width="400"> <img src="ss/t6.png" width="400">
+<img src="ss/t5.png"
 </p>
 
 
